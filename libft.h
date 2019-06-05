@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 10:08:23 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/04 17:21:37 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/05 11:25:51 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
 int	ft_isascii(int c);
-//int	ft_isprint(int c);
+int	ft_isprint(int c);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
 //void	*ft_memalloc(size_t size);

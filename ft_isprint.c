@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 15:28:19 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/05 13:43:47 by hmkabela         ###   ########.fr       */
+/*   Created: 2019/06/05 10:33:25 by hmkabela          #+#    #+#             */
+/*   Updated: 2019/06/05 11:58:17 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isprint(int c)
 {
-	int len;
-
-	len = 0;
-	while (s[len] != '\0')
+	if (c >= 32 && c <= 126)
 	{
-		len++;
+		return (1);
 	}
-	return (len);
+	else
+	{
+		return (0);
+	}
 }

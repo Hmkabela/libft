@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/04 15:28:19 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/05 13:43:47 by hmkabela         ###   ########.fr       */
+/*   Created: 2019/06/05 13:13:17 by hmkabela          #+#    #+#             */
+/*   Updated: 2019/06/05 14:11:46 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strcat(char *restrict dst, const char *restrict src)
 {
-	int len;
+	char *psrc;
+	char *pdst;
+	int id;
+	int is;
 
-	len = 0;
-	while (s[len] != '\0')
+	id = 0;
+	is = 0;
+	psrc = (char *)src;
+	pdst = (char *)dst;
+	while(pdst[id] != '\0')
+		id++;
+	pdst[id] = psrc[is];
+	is++;
+	id++;
+	while (psrc[is] != '\0')
 	{
-		len++;
+		pdst[id] = psrc[is];
+		is++;
+		id++;
 	}
-	return (len);
+	pdst[id] = '\0';
+	return (dst);
 }
