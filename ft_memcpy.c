@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 13:13:17 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/08 11:30:15 by hmkabela         ###   ########.fr       */
+/*   Created: 2019/06/08 11:09:57 by hmkabela          #+#    #+#             */
+/*   Updated: 2019/06/08 12:05:47 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dst, const char *src)
+void	*ft_memcpy(void *dst,const void *src, size_t n)
 {
-	char *psrc;
-	char *pdst;
-	int id;
-	int is;
+	unsigned char *ps;
+	unsigned char *pd;
+	size_t i;
 
-	id = 0;
-	is = 0;
-	psrc = (char *)src;
-	pdst = (char *)dst;
-	while(pdst[id] != '\0')
-		id++;
-	pdst[id] = psrc[is];
-	is++;
-	id++;
-	while (psrc[is] != '\0')
+	if(!dst && !src)
+		return (0);
+	ps = (unsigned char *)src;
+	pd = (unsigned char *)dst;
+	i = 0;
+	while (i < n)
 	{
-		pdst[id] = psrc[is];
-		is++;
-		id++;
+		pd[i] = ps[i];
+		i++;
 	}
-	pdst[id] = '\0';
-	return (dst);
+	return (pd);
 }
