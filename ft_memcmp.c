@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/01 14:15:06 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/09 16:12:45 by hmkabela         ###   ########.fr       */
+/*   Created: 2019/06/09 11:39:55 by hmkabela          #+#    #+#             */
+/*   Updated: 2019/06/09 12:16:38 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (!s)
-		return;
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	unsigned char *ps1;
+	unsigned char *ps2;
+	size_t i;
+
+	ps1 = (unsigned char *)s1;
+	ps2 = (unsigned char *)s2;
+	i = 0;
+	while (n > i)
+	{
+		if(ps1[i] != ps2[i])
+				return (int)(ps1[i] - ps2[i]);
+		else
+			i++;
+	}
+	return (0);
 }
