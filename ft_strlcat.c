@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 12:17:36 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/11 17:08:03 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/13 15:58:51 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,25 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 		return (slen + n);
 	while ((ps[is] != '\0') && is < n )
 	{
-		pd[id] = ps[is];
+		pd[dlen + is] = ps[is];
 		is++;
 		id++;
 	}
 	pd[id] = '\0';
 	return (id + is);
 }
+/*size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+{
+	size_t	i;
+	size_t	j;
 
+	i = ft_strlen(dst);
+	j = ft_strlen(src);
+	if (dstsize <= i)
+		return (dstsize + j);
+	dst += i;
+	while (*src && dstsize-- > i + 1)
+		*dst++ = *src++;
+	*dst = '\0';
+	return (i + j);
+}*/
