@@ -57,3 +57,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	*dst = '\0';
 	return (i + j);
 }*/
+/*size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	len1;
+	size_t	len2;
+	size_t	i;
+
+	len1 = ft_strlen(dst);
+	len2 = ft_strlen(src);
+	i = len1 + len2;
+	if (size <= ft_strlen(dst))
+		return (size + ft_strlen(src));
+	else
+		ft_strncat(dst, src, size - len1 - 1);
+	return (i);
+}*/
