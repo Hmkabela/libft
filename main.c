@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 17:40:03 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/13 13:12:06 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/14 13:19:43 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 int	main()
 {
-	ft_putstr(ft_itoa(-255));
+	size_t n;
+	const char *s;
+
+	n = ft_strlcat("Hlamalani", "Mkabela", 5)
+	s = (const char *)n;
+	ft_putstr(s);
 	return (0);
 }

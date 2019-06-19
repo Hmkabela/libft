@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 14:22:40 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/11 18:15:22 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/17 13:56:26 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,23 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	const char *ps;
-	char *pd;
-	size_t i;
+	const char	*ps;
+	char		*pd;
+	size_t		i;
 
-	if(!dst && !src)
+	if (!dst && !src)
 		return (0);
 	i = 0;
 	ps = (const char *)src;
 	pd = (char *)dst;
 	if (dst <= src)
-	{
 		while (i < n)
 		{
 			pd[i] = ps[i];
 			i++;
 		}
-	}
 	else
-	{
 		while (n-- > 0)
 			(pd[n] = ps[n]);
-	}
 	return (dst);
 }

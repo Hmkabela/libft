@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 10:59:09 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/08 11:04:05 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/17 13:49:23 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ps;
-	size_t i;
+	unsigned char	*ps;
+	size_t			i;
 
 	i = 0;
-	ps = (unsigned char *)s;
-		while(i < n)
-			ps[i++] = 0;
+	ps = ft_memset((unsigned char *)s, 0, n);
 }

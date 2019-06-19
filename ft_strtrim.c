@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 14:11:46 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/10 17:25:48 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/17 14:14:14 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 char	*ft_strtrim(char const *s)
 {
-	size_t ib;
-	size_t ie;
-	size_t i;
-	char *ps;
+	size_t	ib;
+	size_t	ie;
+	size_t	i;
+	char	*ps;
 
-	i = 0;
-	ib = 0;
 	if (!s)
 		return (0);
+	i = 0;
+	ib = 0;
 	ie = ft_strlen(s) - 1;
 	if (ft_strlen(s) == 0)
 		return ((char *)s);
@@ -37,7 +37,5 @@ char	*ft_strtrim(char const *s)
 		return (0);
 	while (ib <= ie)
 		ps[i++] = s[ib++];
-	if (!s)
-		return (0);
 	return (ps);
 }

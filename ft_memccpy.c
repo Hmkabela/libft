@@ -6,19 +6,19 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 12:03:42 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/08 14:29:42 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/17 13:52:18 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst,const void *src,int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char *ps;
-	unsigned char *pd;
-	size_t i;
+	unsigned char	*ps;
+	unsigned char	*pd;
+	size_t			i;
 
-	if(!dst && !src)
+	if (!dst && !src)
 		return (NULL);
 	ps = (unsigned char *)src;
 	pd = (unsigned char *)dst;
@@ -36,4 +36,3 @@ void	*ft_memccpy(void *dst,const void *src,int c, size_t n)
 	}
 	return (NULL);
 }
-

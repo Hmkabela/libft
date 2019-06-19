@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 16:04:30 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/04 18:36:47 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/14 14:34:19 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	size_t i;
 
 	i = 0;
-	while (i < len && src[i])
+	while (i < len && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 16:13:50 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/09 17:20:07 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/18 15:49:16 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int i;
-	char *ps;
+	int		i;
+	char	*ps;
 
 	i = 0;
 	if (!s || !f)
@@ -23,9 +23,9 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	ps = ft_strdup(s);
 	if (!ps)
 		return (0);
-	while(ps[i] != '\0')
+	while (ps[i] != '\0')
 	{
-	ps[i] = (*f)(ps[i]);
+		ps[i] = (*f)(ps[i]);
 		i++;
 	}
 	return (ps);

@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 10:31:45 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/07 13:40:30 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/17 15:41:58 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,28 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	char *h;
-	char *n;
 	size_t ih;
 	size_t in;
-	size_t nlen;
 
-	h = (char *)haystack;
-	n = (char *)needle;
 	ih = 0;
 	in = 0;
-	nlen = ft_strlen(n);
-	if (n[0] == '\0')
-		return (h);
-	if (h[0] == '\0')
-		return (NULL);
-	while (h[ih] != '\0')
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	while (haystack[ih] != '\0')
 	{
-			while ((h[ih] == n[in]) && n[in] != '\0')
-			{
-				ih++;
-				in++;
-				if (in == nlen)
-					return (h + (ih -in));
-			}
-			if (h[ih] != n[in])
-				{
-					ih -= in;
-					in = 0;
-				}
+		while ((haystack[ih] == needle[in]) && needle[in] != '\0')
+		{
 			ih++;
+			in++;
+			if (in == ft_strlen(needle))
+				return ((char *)haystack + (ih - in));
+		}
+		if (haystack[ih] != needle[in])
+		{
+			ih -= in;
+			in = 0;
+		}
+		ih++;
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 15:18:56 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/09 16:10:43 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/18 15:20:46 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_memdel(void **ap)
 {
 	if (!ap)
-		return;
-		free(*ap);
-		*ap = NULL;
+		return ;
+	free(*ap);
+	*ap = NULL;
 }

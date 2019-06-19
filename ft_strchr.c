@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:31:10 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/06 16:59:28 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/17 15:33:46 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
-	char *str;
-	unsigned char cc;
+	int		i;
+	char	*str;
 
 	i = 0;
 	str = (char *)s;
-	cc = (unsigned char)c;
-	if (cc == '\0')
-	{
+	if (c == '\0')
 		return (str + ft_strlen(str));
-	}
 	while (str[i] != '\0')
 	{
-		if(str[i] == cc)
-		{
+		if (str[i] == c)
 			return (str + i);
-		}
 		i++;
 	}
 	return (0);
 }
-
