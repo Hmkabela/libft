@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 17:27:36 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/18 18:20:14 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/20 16:54:03 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,7 @@ static void	ft_lies(char *str, int cc, int a, long num)
 
 static long	ft_cs(long num)
 {
-	if (num < 0)
-		return (num *= -1);
-	else
-		return (num);
+	return ((num < 0) ? (num *= -1) : num);
 }
 
 char		*ft_itoa(int n)
