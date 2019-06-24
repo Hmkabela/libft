@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 13:49:30 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/20 16:03:19 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/24 14:51:43 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	int	ft_nvm(char c)
 {
-	if (c == ' ' || c == '\v' || c == '\f')
+	if (c == 32 || c == '\v' || c == '\f')
 		return (1);
 	if (c == '\n' || c == '\r' || c == '\t')
 		return (1);
@@ -34,7 +34,7 @@ int			ft_atoi(const char *str)
 		i++;
 	s *= (str[i] == '-') ? -1 : 1;
 	(str[i] == '-' || str[i] == '+') ? i++ : 0;
-	while (ft_isdigit(str[i]))
+	while (str[i] && ft_isdigit(str[i]))
 	{
 		res = res * 10 + (str[i++] - '0');
 		if (res > 2147483648 && s == -1)
