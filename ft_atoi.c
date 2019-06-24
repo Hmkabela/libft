@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 13:49:30 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/24 14:51:43 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/24 18:18:47 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ int			ft_atoi(const char *str)
 	(str[i] == '-' || str[i] == '+') ? i++ : 0;
 	while (str[i] && ft_isdigit(str[i]))
 	{
-		res = res * 10 + (str[i++] - '0');
-		if (res > 2147483648 && s == -1)
+		res = res * 10 + (str[i] - '0');
+		if (res > res * 10 + (str[i] - '0') && s == -1)
 			return (0);
-		if (res > 2147483647 && s == 1)
+		else if (res > (res * 10) + (str[i] - '0') && s == 1)
 			return (-1);
+		i++;
 	}
 	return (res * s);
 }

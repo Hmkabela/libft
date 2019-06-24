@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 13:41:09 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/18 18:28:23 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/24 18:49:22 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 void	ft_putendl(char const *s)
 {
-	int i;
-
 	if (!s)
 		return ;
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	ft_putstr(s);
 	ft_putchar('\n');
 }
