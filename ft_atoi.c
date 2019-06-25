@@ -6,20 +6,11 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 13:49:30 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/24 18:18:47 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/25 11:36:21 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static	int	ft_nvm(char c)
-{
-	if (c == 32 || c == '\v' || c == '\f')
-		return (1);
-	if (c == '\n' || c == '\r' || c == '\t')
-		return (1);
-	return (0);
-}
 
 int			ft_atoi(const char *str)
 {

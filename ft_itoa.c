@@ -6,24 +6,11 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 17:27:36 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/20 16:54:03 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/25 13:18:34 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_cc(long num)
-{
-	int cc;
-
-	cc = 1;
-	while (num > 9)
-	{
-		num /= 10;
-		cc++;
-	}
-	return (cc);
-}
 
 static void	ft_lies(char *str, int cc, int a, long num)
 {

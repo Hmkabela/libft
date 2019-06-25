@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 10:08:23 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/24 15:49:56 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/25 15:06:59 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ void				ft_putchar_fd(char s, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+int					ft_nvm(char c);
+int					ft_cc(long num);
+size_t				ft_wc(char const *s, char c);
 
 typedef struct		s_list
 {
@@ -79,5 +82,23 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+typedef struct		human
+{
+	void			*name;
+	int				age;
+	struct human	*next;
+}					person;
+
+person				*p_new(void const *name, int age);
+void				p_delone(person **alst, void (*del)(void *, int));
+void				p_del(person **alst, void (*del)(void *, int));
+void				p_add(person **alst, person *new);
+person				p_map(person *lst, person *(*f)(person *link));
 
 #endif

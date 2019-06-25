@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   p_new.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 10:36:20 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/25 13:29:38 by hmkabela         ###   ########.fr       */
+/*   Created: 2019/06/25 15:10:34 by hmkabela          #+#    #+#             */
+/*   Updated: 2019/06/25 16:12:28 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+person		*p_new(void const *name, int age)
 {
-	unsigned int a;
+	person	*a;
 
-	a = n;
-	if (n < 0)
+	if (!(a = (person *)malloc(sizeof(person))))
+		return (NULL);
+	if (a)
 	{
-		a *= -1;
-		ft_putchar('-');
+		if (!(a->name = ft_strnew(ft_strlen(name))))
+		{
+			ft_memdel(a);
+			return (NULL);
+		}
+		if (!(a->age = (int)ft_memalloc(1)))
+		{
+			ft_memdel(a->name
+			return (NULL);
+		}
 	}
-	if (a > 9)
-		ft_putnbr(a / 10);
-	a = (a % 10) + '0';
-	ft_putchar(a);
+	
 }

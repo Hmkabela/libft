@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 10:36:20 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/25 13:29:38 by hmkabela         ###   ########.fr       */
+/*   Created: 2019/06/25 17:41:18 by hmkabela          #+#    #+#             */
+/*   Updated: 2019/06/25 18:26:30 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	unsigned int a;
+	t_list L1;
+	t_list L2;
 
-	a = n;
-	if (n < 0)
+	if (!lst || !f)
+		return (0);
+	L1 = L2 = *(f)(lst);
+	lst = lst->next;
+	while (lst)
 	{
-		a *= -1;
-		ft_putchar('-');
+		L1.next = (*f)(lst);
+		L1 = *L1.next;
+		lst = lst->next;
 	}
-	if (a > 9)
-		ft_putnbr(a / 10);
-	a = (a % 10) + '0';
-	ft_putchar(a);
+	return (lst);
 }

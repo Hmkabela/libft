@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 12:19:10 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/18 18:27:26 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/25 13:31:16 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,5 @@ void	ft_putstr(char const *s)
 		return ;
 	i = 0;
 	while (s[i] != '\0')
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+		ft_putchar(s[i++]);
 }

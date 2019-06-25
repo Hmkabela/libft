@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 16:04:30 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/14 14:34:19 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/25 13:49:19 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		i++;
 	}
 	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
+		dst[i++] = '\0';
 	return (dst);
 }

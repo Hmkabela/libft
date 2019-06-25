@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_wc.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 10:36:20 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/25 13:29:38 by hmkabela         ###   ########.fr       */
+/*   Created: 2019/06/25 13:53:43 by hmkabela          #+#    #+#             */
+/*   Updated: 2019/06/25 13:54:18 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+size_t	ft_wc(char const *s, char c)
 {
-	unsigned int a;
+	size_t i;
+	size_t w;
 
-	a = n;
-	if (n < 0)
+	i = 0;
+	w = 0;
+	while (s[i] != '\0')
 	{
-		a *= -1;
-		ft_putchar('-');
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		w++;
 	}
-	if (a > 9)
-		ft_putnbr(a / 10);
-	a = (a % 10) + '0';
-	ft_putchar(a);
+	return (w);
 }
