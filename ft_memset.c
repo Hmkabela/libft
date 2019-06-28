@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 18:09:24 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/17 13:48:46 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/28 14:09:17 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void	*ft_memset(void *s, int c, size_t n)
 	ps = (unsigned char *)s;
 	while (i < n)
 		ps[i++] = c;
-	return (ps);
+	return (s);
 }

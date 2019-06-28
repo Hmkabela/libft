@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 17:50:13 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/18 14:20:02 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/28 14:13:47 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 			if (a[i] < b[i])
 				return (-1);
 		}
-		else
-			i++;
+		i++;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 10:08:23 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/25 15:06:59 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/28 11:17:17 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <string.h>
-# include <strings.h>
-# include <ctype.h>
 # include <stdlib.h>
 
 void				*ft_memset(void *b, int c, size_t n);
@@ -87,18 +85,5 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-
-typedef struct		human
-{
-	void			*name;
-	int				age;
-	struct human	*next;
-}					person;
-
-person				*p_new(void const *name, int age);
-void				p_delone(person **alst, void (*del)(void *, int));
-void				p_del(person **alst, void (*del)(void *, int));
-void				p_add(person **alst, person *new);
-person				p_map(person *lst, person *(*f)(person *link));
 
 #endif
