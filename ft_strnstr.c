@@ -6,7 +6,7 @@
 /*   By: hmkabela <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 13:49:09 by hmkabela          #+#    #+#             */
-/*   Updated: 2019/06/19 14:21:39 by hmkabela         ###   ########.fr       */
+/*   Updated: 2019/06/28 16:37:51 by hmkabela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 char	*ft_strnstr(const char *h, const char *n, size_t len)
 {
-	size_t ih;
-	size_t in;
+	int		i;
+	size_t	j;
+	size_t	k;
 
-	ih = 0;
-	in = 0;
-	if ((char)n[0] == '\0')
+	i = 0;
+	if ((n[i] == '\0') && (h[i] == '\0'))
 		return ((char *)h);
-	if (((char)h[0] == '\0' || ft_strlen((char*)h) < ft_strlen((char *)n)))
-		return (NULL);
-	while ((char)h[ih] != '\0' && ih < len)
+	while (h[i])
 	{
-		while ((char)h[ih++] == (char)n[in++])
+		j = i;
+		k = 0;
+		if (n[k] == '\0')
+			return ((char *)h + i);
+		while (h[i] && n[k] && h[j] == n[k] && j < len)
 		{
-			if (in == ft_strlen((char *)n))
-				return ((char *)h + (ih - in));
-			if (ih == len)
-				return (NULL);
+			j++;
+			k++;
+			if (n[k] == '\0')
+				return ((char *)h + i);
 		}
-		if ((char)h[ih] != (char)n[in])
-			in = 0;
-		ih++;
+		i++;
 	}
 	return (NULL);
 }
